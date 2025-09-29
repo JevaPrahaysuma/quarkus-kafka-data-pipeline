@@ -44,21 +44,19 @@ sequenceDiagram
     R->>API: return List<DataEntity>
 
 📂 Project Structure
-src/
- └── main/java/com/example/pipeline
-      ├── consumer/
-      │    └── KafkaConsumerService.java
-      ├── controller/
-      │    └── DataController.java
-      ├── model/
-      │    └── DataEntity.java
-      ├── repository/
-      │    └── DataRepository.java
-      └── service/
-           └── DataProcessingService.java
+quarkus-kafka-data-pipeline/
+ ┣ src/main/java/com/example/pipeline/
+ ┃ ┣ controller/       # REST API Layer
+ ┃ ┣ consumer/         # Kafka Consumer
+ ┃ ┣ model/            # JPA Entities
+ ┃ ┣ repository/       # Panache Repository
+ ┃ ┗ service/          # Business Logic
+ ┣ src/test/java/com/example/pipeline/
+ ┃ ┗ DataPipelineTest.java
+ ┣ src/main/resources/
+ ┃ ┗ application.properties
+ ┗ README.md
 
- └── test/java/com/example/pipeline
-      └── DataPipelineTest.java
 
 ⚡ API Documentation
 1. Get All Data
@@ -69,6 +67,7 @@ Description: Retrieves all data from database.
 
 Response Example:
 
+```json
 [
   {
     "id": 1,
@@ -85,6 +84,7 @@ Description: Creates a new DataEntity entry.
 
 Request Example:
 
+```json
 {
   "name": "ManualEntry",
   "value": 42
@@ -93,6 +93,7 @@ Request Example:
 
 Response Example:
 
+```json
 {
   "id": 2,
   "name": "ManualEntry",
@@ -116,7 +117,7 @@ If using Dev Services (Quarkus), Kafka will run automatically in dev mode.
 Or manually start Kafka/Zookeeper (e.g. via Docker).
 
 3. Run Application
-./mvnw quarkus:dev
+mvn quarkus:dev
 
 4. Access API
 
@@ -126,7 +127,7 @@ Open: http://localhost:8080/data
 
 Run unit tests:
 
-./mvnw test
+mvn test
 
 Example: DataPipelineTest.java
 
