@@ -75,6 +75,7 @@ Response Example:
     "value": 123456789
   }
 ]
+```
 
 2. Create Data
 
@@ -89,6 +90,7 @@ Request Example:
   "name": "ManualEntry",
   "value": 42
 }
+```
 
 
 Response Example:
@@ -99,6 +101,7 @@ Response Example:
   "name": "ManualEntry",
   "value": 42
 }
+```
 
 ▶️ Running the Project
 1. Start PostgreSQL
