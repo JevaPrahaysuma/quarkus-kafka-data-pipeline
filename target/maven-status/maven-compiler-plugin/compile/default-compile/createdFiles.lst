@@ -1,0 +1,9 @@
+com/example/pipeline/producer/KafkaProducerService.class
+com/example/pipeline/repository/DataRepository.class
+com/example/pipeline/QuarkusKafkaPipelineApp.class
+META-INF/panache-archive.marker
+com/example/pipeline/controller/DataController.class
+com/example/pipeline/model/DataEntity.class
+com/example/pipeline/service/DataProcessingService.class
+com/example/pipeline/producer/KafkaOutputProducer.class
+com/example/pipeline/consumer/KafkaConsumerService.class
